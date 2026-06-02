@@ -4,20 +4,19 @@ public class Main {
         List<Student> students=new ArrayList<>();
         
         students.add(new Student(1,"GiaHung",8.2));
-        students.add(new Student(1,"QuynhChan",9.5));
-        students.add(new Student(1,"PhuocNgoc",9.2));
+        students.add(new Student(2,"QuynhChan",9.5));
+        students.add(new Student(3,"PhuocNgoc",9.2));
 
         for(Student st:students){
             System.out.println(st);
         }
         System.out.println("----------------");
         Student maxGpa = students.get(0);
-        for(Student st:students){
-            if(st.getGpa()>maxGpa.getGpa()){
-                maxGpa=st;
+        for(Student student:students){
+            if(student.getGpa()>maxGpa.getGpa()){
+                maxGpa=student;
             }
-        }  
-        String result =maxGpa.toString();
-        System.out.println(result);
+        } 
+        System.out.println(maxGpa);
     }
 }   
