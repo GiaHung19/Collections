@@ -7,8 +7,8 @@ public class Main {
         students.add(new Student(2,"QuynhChan",9.5));
         students.add(new Student(3,"PhuocNgoc",9.2));
 
-        for(Student st:students){
-            System.out.println(st);
+        for(Student student:students){
+            System.out.println(student);
         }
         System.out.println("----------------");
         Student maxGpa = students.get(0);
@@ -17,6 +17,26 @@ public class Main {
                 maxGpa=student;
             }
         } 
-        System.out.println(maxGpa);
+
+        students.set(1,new Student(4,"MinhTu",7.8));
+
+        students.sort(Comparator.comparingDouble(Student::getGpa).reversed());
+        for(Student st:students){
+            System.out.println(st);
+        }
+        if(!isAvailable(1, students)){
+            System.out.println("not Available");
+        }
+        
+
     }
+    public static boolean isAvailable(int id,List<Student> students){
+            for (Student student :students){
+                if(student.getId()==id){
+                    System.out.println("Available");
+                    return true;
+                }
+            }
+            return false;
+        }
 }   
