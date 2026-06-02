@@ -10,13 +10,14 @@ public class Main {
         for(Student st:students){
             System.out.println(st);
         }
-        System.out.print("----------------");
-        Student maxGpa = students[0];
+        System.out.println("----------------");
+        Student maxGpa = students.get(0);
         for(Student st:students){
             if(st.getGpa()>maxGpa.getGpa()){
                 maxGpa=st;
             }
         }  
-        maxGpa.toString();
+        String result =maxGpa.toString();
+        System.out.println(result);
     }
 }   
